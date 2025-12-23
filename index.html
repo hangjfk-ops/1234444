@@ -844,23 +844,96 @@
   </div>
 
   <!-- Footer -->
-  <footer class="footer" aria-label="Футер">
-    <div class="container">
-      <div class="foot-brand">
-        <div class="brand-mark" aria-hidden="true"></div>
-        <div class="brand-name" style="color:#e7e9ee; text-transform:uppercase; letter-spacing:.6px;">Serioz &amp; Seriozka</div>
-      </div>
-      <div class="foot-links">
-        <a class="foot-link" href="#categories">Категории</a>
-        <a class="foot-link" href="#about">О бренде</a>
-        <a class="foot-link" href="#gallery">Лукбук</a>
-        <a class="foot-link" href="#trust">Контакты</a>
+  <!-- ✅ CSS: вставьте внутрь <style> -->
+<style>
+  /* Bottom Sections */
+  .bottom{ background:var(--surface-2); }
+  .bottom-wrap{ display:grid; grid-template-columns:1.1fr .9fr; gap:32px; align-items:start; }
+  .bottom-group h3{ font-weight:700; font-size:18px; margin:0 0 12px; text-transform:uppercase; letter-spacing:.6px; color:#f0f0f0; }
+  .bottom-list{ display:grid; grid-template-columns:repeat(2,1fr); gap:16px; }
+  .bottom-item{
+    display:flex; flex-direction:column; gap:6px;
+    padding:16px; border-radius:16px;
+    background:#141416; border:1px solid rgba(255,0,51,.18);
+    color:#e8e8e8; box-shadow:var(--shadow-soft);
+    transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease, background .18s ease, color .18s ease;
+    cursor:pointer;
+  }
+  .bottom-item:hover{ transform:translateY(-2px); box-shadow:var(--shadow-medium); border-color:var(--gold-border); background:#1a1c1f; color:#ffffff; }
+  .bottom-item .title{ font-weight:700; font-size:16px; text-transform:uppercase; letter-spacing:.5px; color:#f0f0f0; }
+  .bottom-item .sub{ font-size:13px; color:var(--muted); }
+
+  .similar{
+    background:#131417; border-radius:20px; padding:18px; border:1px solid rgba(255,0,51,.18);
+    box-shadow:var(--shadow-soft);
+  }
+  .similar h3{ font-weight:700; font-size:18px; margin:0 0 12px; text-transform:uppercase; letter-spacing:.6px; color:#f0f0f0; }
+  .similar-list{ display:flex; flex-direction:column; gap:10px; }
+  .similar-link{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:12px 14px; border-radius:12px;
+    background:#141416; border:1px solid rgba(255,255,255,.14);
+    color:#c9ced6; transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease, color .18s ease, background .18s ease;
+  }
+  .similar-link:hover{ transform:translateY(-2px); box-shadow:var(--shadow-medium); border-color:var(--gold-border); color:#ffffff; background:#1a1c1f; }
+  .similar-link .name{ font-weight:600; letter-spacing:.4px; text-transform:uppercase; }
+  .similar-link svg{ width:18px; height:18px; }
+
+  @media (max-width:860px){
+    .bottom-wrap{ grid-template-columns:1fr; }
+    .bottom-list{ grid-template-columns:1fr; }
+  }
+</style>
+
+<!-- ✅ HTML: вставьте ПЕРЕД <!-- Footer --> -->
+<section id="bottom" class="bottom section-pad" aria-label="Категории и подобное">
+  <div class="container bottom-wrap">
+    <!-- Левая колонка: быстрый вход в категории -->
+    <div class="bottom-group">
+      <h2 class="section-title">Категории</h2>
+      <p class="section-sub">Выберите направление коллекции.</p>
+
+      <div class="bottom-list" role="list">
+        <a class="bottom-item" role="listitem" href="#categories">
+          <span class="title">Ювелирные изделия</span>
+          <span class="sub">Платиноиды, бриллианты и перламутр — единичные экземпляры.</span>
+        </a>
+        <a class="bottom-item" role="listitem" href="#categories">
+          <span class="title">Костюмы</span>
+          <span class="sub">Точные посадки, ручные стежки, итальянские ткани.</span>
+        </a>
+        <a class="bottom-item" role="listitem" href="#categories">
+          <span class="title">Платья</span>
+          <span class="sub">Кутюрные силуэты: шёлк, органза, тончайшее кружево.</span>
+        </a>
+        <a class="bottom-item" role="listitem" href="#gallery">
+          <span class="title">Аксессуары</span>
+          <span class="sub">Женские и мужские акценты: сумки, платки, ремни, часы.</span>
+        </a>
       </div>
     </div>
-    <div class="container" style="margin-top:18px;">
-      <small style="color:#c9ced6;">© 2025 Serioz &amp; Seriozka. Все права защищены.</small>
-    </div>
-  </footer>
+
+    <!-- Правая колонка: «Похожие» разделы -->
+    <aside class="similar" aria-label="Похожие разделы">
+      <h3>Похожие</h3>
+      <div class="similar-list">
+        <a class="similar-link" href="#about">
+          <span class="name">О бренде</span>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h11m0 0-4-4m4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="similar-link" href="#gallery">
+          <span class="name">Лукбук</span>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h11m0 0-4-4m4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="similar-link" href="#trust">
+          <span class="name">Контакты</span>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h11m0 0-4-4m4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </aside>
+  </div>
+</section>
+
 
   <script>
     /* ЗАПРЕТ ПРАВОГО КЛИКА (КОНТЕКСТНОЕ МЕНЮ) */
@@ -1149,4 +1222,5 @@
   </script>
 </body>
 </html>
+
 
